@@ -25,6 +25,11 @@ python manage.py migrate
 ```sh
 python manage.py createsuperuser
 ```
+**5.Set Up RabbitMQ**
+```sh
+sudo apt-get install rabbitmq-server
+service rabbitmq-server start
+```
 **6.Run Server**
 ```sh
 python manage.py runserver
