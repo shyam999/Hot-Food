@@ -9,7 +9,7 @@ source env/bin/activate
 ```
 **2.Clone Repo**
 ```sh
-git clone https://github.com/shyam999/DjangoBlog.git
+git clone https://github.com/shyam999/Hot-Food.git
 ```
 **3.Install Requirements**
 ```sh
