@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+Thank you
+{% endblock %}
+{% block content %}
+
+
+<!-- Full Page Image Header with Vertically Centered Content -->
+<header class="masthead">
+  <div class="container h-100" style="margin-bottom: 24%;">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center" style:padding-top:100px;>
+        <h1 class="font-weight-light"><br><br><br><br><br><br><br>Thank You</h1><br>
+        <p class="lead">Your order has been successfully completed. Your order number is<strong>{{ order.id }}</strong>.<br><br><br><br><br><br><br><br></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% endblock %}

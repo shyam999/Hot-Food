@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <div class="product_image_area"style="margin-bottom: 35%;">
+      <div class="container">
+        <div class="row s_product_inner">
+          <div class="col-lg-6"style="margin-bottom: 15%;">
+            <div class="s_product_img" style="padding-top: 15px;">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{ product.image.url }}" alt="First slide"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-1">
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+              <div class="s_product_text">
+                <h3>{{ product.name }}</h3>
+                <h2>$ {{ product.price }}</h2>
+                <ul class="list">
+                  <li>
+                    <a class="active" href="#">
+                      <span>Category</span> : ${{ product.category }}</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"> <span>Availibility</span> : In Stock</a>
+                  </li>
+                </ul>
+                    <div class="card_area"style="margin-top: 8%; ">
+                        {{ cart_product_form|crispy }}
+                        {% csrf_token %}
+                        <button class="btn btn-ordinary" style="margin-left: 20px; margin-top: -20px;" input type="submit""><h3>Add to Cart</h3></button>
+                    </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

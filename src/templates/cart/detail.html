@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Your shopping cart
+{% endblock %}
+{% block content %}
+<div id="all">
+                <div id="content">
+                  <div class="container" style="margin-top: 4%; margin-bottom: 10%;">
+                    <div class="row bar">
+                      <div class="col-lg-12" style="color: black; margin-bottom: 4%;">
+                        {% with total_items=cart|length %}
+                        {% if cart|length > 0 %}
+                        <h2>You have {{ total_items }} item{{ total_items|pluralize }} in your cart</h2>
+                        {% else %}
+                        Your cart is empty.
+                        {% endif %}
+                        {% endwith %}
+                      </div>
+                      <div id="basket" class="col-lg-9">
+                        <div class="box mt-0 pb-0 no-horizontal-padding">
+                          <form method="get" action="shop-checkout1.html">
+                            <div class="table-responsive">
+                              <table class="table" style="font-family: Permanent Marker;">
+                                <thead>
+                                  <tr>
+                                    <th colspan="2">Product</th>
+                                    <th>Quantity</th>
+                                    <th>price</th>
+                                    <th colspan="2">Total</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {% for item in cart %}
+                                  {% with product=item.product %}
+                                  <tr>
+                                    <td><a href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="" class="img-fluid"></a></td>
+                                    <td>{{ product.name }}</td>
+                                    <td>
+                                      <form action="{% url 'cart:cart_add' product.id %}" method="post">{{ item.update_quantity_form.quantity }}
+                                      {{ item.update_quantity_form.update }}
+                                      <input type="submit" value="Update">
+                                      {% csrf_token %}
+                                      </form>
+                                    </td>
+                                    <td>${{ item.price }}</td>
+                                    <td>${{ item.total_price }}</td>
+                                    <td><a href="{% url 'cart:cart_remove' product.id %}"><i class="fa fa-trash-o"></i></a></td>
+                                  </tr>
+                                  {% endwith %}
+                                  {% endfor %}
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="box-footer d-flex justify-content-between align-items-center">
+                              <div class="left-col"><a href="{% url 'myapp:product_list' %}" class="btn btn-secondary">Continue shopping</a></div>
+                              <div class="right-col"><a href="{% url 'orders:order_create' %}" class="btn btn-secondary"><i class="fa fa-credit-card"></i> Proceed to checkout</a></div>
+                            </div>
+                          </form>
+                        </div>
+
+                      </div>
+                      <div class="col-lg-3">
+                        <div id="order-summary" class="box mt-0 mb-4 p-0">
+                          <div class="box-header mt-0">
+                            <h3>Order summary</h3>
+                          </div>
+                          <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+                          <div class="table-responsive">
+                            <table class="table">
+                              <tbody>
+                                <tr class="total">
+                                  <td>Order Total</td>
+                                  <th>${{ cart.get_total_price }}</th>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+{% endblock %}

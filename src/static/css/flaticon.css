@@ -1,0 +1,46 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 03/03/2019 05:22
+  	*/
+
+	@font-face {
+	    font-family: "Flaticon";
+	    src: url("../fonts/Flaticon.eot");
+	    src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"), url("../fonts/Flaticon.woff2") format("woff2"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+	    @font-face {
+	        font-family: "Flaticon";
+	        src: url("./Flaticon.svg#Flaticon") format("svg");
+	    }
+	}
+
+	[class^="flaticon-"]:before,
+	[class*=" flaticon-"]:before,
+	[class^="flaticon-"]:after,
+	[class*=" flaticon-"]:after {
+	    font-family: Flaticon;
+      font-size: 32px;
+      color: #2a2a2a;
+	    font-style: normal;
+	    margin-left: 0px;
+	}
+
+	.flaticon-money:before {
+	    content: "\f100";
+	}
+
+	.flaticon-truck:before {
+	    content: "\f101";
+	}
+
+	.flaticon-support:before {
+	    content: "\f102";
+	}
+
+	.flaticon-blockchain:before {
+	    content: "\f103";
+	}

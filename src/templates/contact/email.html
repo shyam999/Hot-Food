@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<section class="section_gap" style="margin-top: -20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">Get in Touch :</h2>
+        </div>
+        <div class="col-lg-8 mb-4 mb-lg-0">
+          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                    {{ form.message|as_crispy_field }}
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form.name|as_crispy_field }}
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form.from_email|as_crispy_field }}
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                    {{ form.subject|as_crispy_field }}
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-lg-3">
+              <button type="submit" class="main_btn">Send Message</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-4" style="margin-top: 30px;">
+          <div class="media contact-info">
+
+            <div class="media-body">
+              <h3>Kolkata, India.</h3>
+              <p>Rosemead, CA 91770</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <div class="media-body">
+              <h3><a href="tel:454545654">00 (440) 9865 562</a></h3>
+              <p>Mon to Fri 9am to 6pm</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <div class="media-body">
+              <h3><a href="mailto:support@colorlib.com">contact@shyam999.site</a></h3>
+              <p>Send us your query anytime!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

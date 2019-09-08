@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="offer_area">
+    <div class="container"style="height:420px; margin-bottom: 2%; margin-top: -6%;">
+      <div class="row justify-content-center">
+        <div class="offset-lg-4 col-lg-6 ml-2 text-center">
+          <div class="offer_content">
+            <h3 class="text-uppercase mb-40 mt-4">all non-veg food</h3>
+            <h2 class="text-uppercase">50% off</h2>
+            <a href="#" class="genric-btn success-border circle mb-20 mt-5">Discover Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+      <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="main_title" style="font-family: Permanent Marker; padding-left: 16px;">
+            <h2><span>Featured Hot Food</span></h2>
+          </div>
+        </div>
+      </div>
+        <div class="row flex-row-reverse">
+          <div class="col-lg-9">
+            <div class="latest_product_inner">
+              <div class="row">
+                {% for product in products %}
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-product">
+                    <div class="product-img">
+                      <img class="card-img"src="{{ product.image.url }}"alt=""/>
+                    </div>
+                    <div class="product-btm">
+                      <a href="{{ product.get_absolute_url }}" class="d-block">
+                        <h4>{{ product.name }}</h4>
+                      </a>
+                      <div class="mt-3">
+                        <span class="mr-4">$ {{ product.price }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="left_sidebar_area">
+              <aside class="left_widgets p_filter_widgets">
+                <div class="l_w_title">
+                  <h3>Browse Categories</h3>
+                </div>
+                <div class="widgets_inner">
+                  <ul class="list">
+                    <li>
+                      <a href="{% url 'myapp:product_list' %}">All Foods</a>
+                    </li>
+                    {% for c in categories %}
+                    <li {% if category.slug == c.slug %}class="nav-item"{% endif %}>
+                      <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </aside>
+
+              <aside class="left_widgets p_filter_widgets" <style="margin-bottom: 20%">
+              </style>
+                <div class="l_w_title">
+                  <h3>Browse By Shops</h3>
+                </div>
+                <div class="widgets_inner">
+                  <ul class="list">
+                    <li>
+                      <a href="#">Apple</a>
+                    </li>
+                    <li>
+                      <a href="#">Asus</a>
+                    </li>
+                    <li class="active">
+                      <a href="#">Gionee</a>
+                    </li>
+                    <li>
+                      <a href="#">Micromax</a>
+                    </li>
+                    <li>
+                      <a href="#">Samsung</a>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
