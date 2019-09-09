@@ -34,6 +34,10 @@ service rabbitmq-server start
 ```sh
 python manage.py runserver
 ```
+
+<p align="center">
+  <img src="./screenshot/product.png" alt="Bundle Analyzer example" width="650">
+</p>
 # Screenshots:
 ## Homepage:
 ![](screenshot/home.png)
