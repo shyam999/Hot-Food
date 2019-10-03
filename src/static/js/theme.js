@@ -1,4 +1,4 @@
-; (function ($) {
+ (function ($) {
     "use strict"
 
 
@@ -18,8 +18,8 @@
                     $(".header_area").removeClass("navbar_fixed");
                 }
             });
-        };
-    };
+        }
+    }
     navbarFixed();
 
 
