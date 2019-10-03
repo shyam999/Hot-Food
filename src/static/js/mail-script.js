@@ -21,7 +21,7 @@
                 success: function(data) {
                     alert.html(data).fadeIn(); // fade in response data
                     form.trigger('reset'); // reset form
-                    submit.attr("style", "display: none !important");; // reset submit button text
+                    submit.attr("style", "display: none !important"); // reset submit button text
                 },
                 error: function(e) {
                     console.log(e)
