@@ -1,5 +1,5 @@
 # Hot-Food
-> A Food Delivery Website based on django 2.2 and bootstrap4
+> Food Delivery Website built with django
 ## Installation:
 
 **1.Setup Virtualenv**
