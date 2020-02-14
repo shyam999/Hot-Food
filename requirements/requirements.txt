@@ -8,7 +8,7 @@ isort==4.3.21
 kombu==4.6.4
 lazy-object-proxy==1.4.1
 mccabe==0.6.1
-Pillow==6.1.0
+Pillow==6.2.0
 pylint==2.3.1
 pytz==2019.2
 six==1.12.0
