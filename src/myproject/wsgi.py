@@ -1,7 +1,6 @@
 """
 WSGI config for myproject project.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
 """
 
 import os
