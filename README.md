@@ -2,14 +2,14 @@
 > Food Delivery Website built with django
 ## Installation:
 
-**1.Setup Virtualenv**
+**1.Clone Repo**
+```sh
+git clone https://github.com/shyam999/Hot-Food.git
+```
+**2.Setup Virtualenv**
 ```sh
 virtualenv env
 source env/bin/activate
-```
-**2.Clone Repo**
-```sh
-git clone https://github.com/shyam999/Hot-Food.git
 ```
 **3.Install Requirements**
 ```sh
