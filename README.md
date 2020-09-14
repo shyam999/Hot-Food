@@ -41,5 +41,3 @@ python manage.py runserver
 ![](screenshot/product.png)
 ## Address Page:
 ![](screenshot/address.png)
-## Contact Page:
-![](screenshot/contact.png)
