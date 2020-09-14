@@ -1,5 +1,5 @@
 # Hot-Food
-> Food Delivery Website built with django
+> Food Delivery Website built with Django and Bootstrap
 ## Installation:
 
 **1.Clone Repo**
