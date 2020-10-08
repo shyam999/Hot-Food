@@ -2,40 +2,33 @@
 > Food Delivery Website built with Django and Bootstrap
 ## Installation:
 
-**1.Clone Repo**
+**1.Clone the Repo & Setup Virtualenv**
 ```sh
 git clone https://github.com/shyam999/Hot-Food.git
-```
-**2.Setup Virtualenv**
-```sh
 virtualenv env
 source env/bin/activate
 ```
-**3.Install Requirements**
+**2.Install Requirements**
 ```sh
 cd requirements.txt
 pip install -r requirements.txt
+```
+**3.Set Up RabbitMQ Server**
+```sh
+sudo apt-get install rabbitmq-server
+service rabbitmq-server start
 ```
 **4.Migrate Database**
 ```sh
 python manage.py makemigrations
 python manage.py migrate
 ```
-**5.Create User**
-```sh
-python manage.py createsuperuser
-```
-**5.Set Up RabbitMQ**
-```sh
-sudo apt-get install rabbitmq-server
-service rabbitmq-server start
-```
-**6.Run Server**
+**5.Start Server**
 ```sh
 python manage.py runserver
 ```
 # Screenshots:
 ## Homepage:
-![](screenshot/home.png)
+![](demo/home.png)
 ## Product Page:
-![](screenshot/product.png)
+![](demo/product.png)

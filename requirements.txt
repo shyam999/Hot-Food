@@ -39,3 +39,4 @@ wcwidth==0.2.5
 webencodings==0.5.1
 whitenoise==5.0.1
 zipp==3.3.0
+celery==4.1.0
