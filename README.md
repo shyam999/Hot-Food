@@ -31,6 +31,6 @@ python manage.py migrate
 python manage.py runserver
 ```
 # Contributors
-Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.<br/><br/>
+Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.<br/>
 
 Please star the repo and feel free to make pull requests.
