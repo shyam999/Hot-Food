@@ -10,11 +10,11 @@
 ```sh
 git clone https://github.com/shyam999/Hot-Food.git
 ```
-**2.Setup Virtualenv & Install Requirements**
+**2.Setup pipenv & Install Requirements**
 ```sh
-virtualenv env
-source env/bin/activate
-pip install -r requirements.txt
+pip install pipenv
+pipenv install -r requirements.txt
+pipenv shell
 ```
 **3.Set Up RabbitMQ Server**
 ```sh
