@@ -34,7 +34,7 @@ six==1.14.0
 sqlparse==0.3.1
 static3==0.7.0
 Unipath==1.0
-urllib3==1.25.10
+urllib3==1.26.5
 wcwidth==0.2.5
 webencodings==0.5.1
 whitenoise==5.0.1
